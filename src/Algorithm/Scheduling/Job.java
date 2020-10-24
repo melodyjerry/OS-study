@@ -8,17 +8,17 @@ import java.util.Arrays;
  */
 public class Job {
     public static int processNumber; //作业数量
-    public int[] arriveTime; //到达时间
-    public int[] serviceTime; //执行时长
-    public int[] processOrder; //调度顺序
+    public double[] arriveTime; //到达时间
+    public double[] serviceTime; //执行时长
+    public double[] processOrder; //调度顺序
 
-    public int[] startTime; //开始时间
-    public int[] waitTime; //等待时间
-    public int[] completeTime; //完成时间
-    public int[] turnAroundTime; //周转时间
-    public int averageTurnAroundTime; //平均周转时间
-    public int[] turnAroundTimeWithWeight; //带权周转时间
-    public int averageTurnAroundTimeWithWeight; //平均带权周转时间
+    public double[] startTime; //开始时间
+    public double[] waitTime; //等待时间
+    public double[] completeTime; //完成时间
+    public double[] turnAroundTime; //周转时间
+    public double averageTurnAroundTime; //平均周转时间
+    public double[] turnAroundTimeWithWeight; //带权周转时间
+    public double averageTurnAroundTimeWithWeight; //平均带权周转时间
 
     public static int getProcessNumber() {
         return processNumber;
@@ -28,83 +28,83 @@ public class Job {
         Job.processNumber = processNumber;
     }
 
-    public int[] getArriveTime() {
+    public double[] getArriveTime() {
         return arriveTime;
     }
 
-    public void setArriveTime(int[] arriveTime) {
+    public void setArriveTime(double[] arriveTime) {
         this.arriveTime = arriveTime;
     }
 
-    public int[] getServiceTime() {
+    public double[] getServiceTime() {
         return serviceTime;
     }
 
-    public void setServiceTime(int[] serviceTime) {
+    public void setServiceTime(double[] serviceTime) {
         this.serviceTime = serviceTime;
     }
 
-    public int[] getProcessOrder() {
+    public double[] getProcessOrder() {
         return processOrder;
     }
 
-    public void setProcessOrder(int[] processOrder) {
+    public void setProcessOrder(double[] processOrder) {
         this.processOrder = processOrder;
     }
 
-    public int[] getStartTime() {
+    public double[] getStartTime() {
         return startTime;
     }
 
-    public void setStartTime(int[] startTime) {
+    public void setStartTime(double[] startTime) {
         this.startTime = startTime;
     }
 
-    public int[] getWaitTime() {
+    public double[] getWaitTime() {
         return waitTime;
     }
 
-    public void setWaitTime(int[] waitTime) {
+    public void setWaitTime(double[] waitTime) {
         this.waitTime = waitTime;
     }
 
-    public int[] getCompleteTime() {
+    public double[] getCompleteTime() {
         return completeTime;
     }
 
-    public void setCompleteTime(int[] completeTime) {
+    public void setCompleteTime(double[] completeTime) {
         this.completeTime = completeTime;
     }
 
-    public int[] getTurnAroundTime() {
+    public double[] getTurnAroundTime() {
         return turnAroundTime;
     }
 
-    public void setTurnAroundTime(int[] turnAroundTime) {
+    public void setTurnAroundTime(double[] turnAroundTime) {
         this.turnAroundTime = turnAroundTime;
     }
 
-    public int getAverageTurnAroundTime() {
+    public double getAverageTurnAroundTime() {
         return averageTurnAroundTime;
     }
 
-    public void setAverageTurnAroundTime(int averageTurnAroundTime) {
+    public void setAverageTurnAroundTime(double averageTurnAroundTime) {
         this.averageTurnAroundTime = averageTurnAroundTime;
     }
 
-    public int[] getTurnAroundTimeWithWeight() {
+    public double[] getTurnAroundTimeWithWeight() {
         return turnAroundTimeWithWeight;
     }
 
-    public void setTurnAroundTimeWithWeight(int[] turnAroundTimeWithWeight) {
+    public void setTurnAroundTimeWithWeight(double[] turnAroundTimeWithWeight) {
         this.turnAroundTimeWithWeight = turnAroundTimeWithWeight;
     }
 
-    public int getAverageTurnAroundTimeWithWeight() {
+    public double getAverageTurnAroundTimeWithWeight() {
         return averageTurnAroundTimeWithWeight;
     }
 
-    public void setAverageTurnAroundTimeWithWeight(int averageTurnAroundTimeWithWeight) {
+    public void setAverageTurnAroundTimeWithWeight(double averageTurnAroundTimeWithWeight) {
         this.averageTurnAroundTimeWithWeight = averageTurnAroundTimeWithWeight;
     }
 
