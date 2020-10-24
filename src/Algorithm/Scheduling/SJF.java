@@ -3,14 +3,42 @@ package Algorithm.Scheduling;
 import java.util.Scanner;
 
 /**
- * FCFS先来先服务算法
+ * SJF最短作业优先算法
  *
- * 响应比=等待时间/运行时间+1
- * 周转时间=完成时间-到达时间
- * 带权周转时间=周转时间/运行时间
+ * 完成时间 = 开始时间 + 需要运行时间
+ * 周转时间 = 完成时间 - 到达时间
+ * 带权周转时间 = 周转时间 / 需要运行时间
  */
-public class FCFS {
-    private static void FCFS(Job job) {
+public class SJF {
+
+    public static double[] quickSort(double[] a, int low, int high) {
+        if(low < high) {
+            int middle = getMiddle(a, low, high);
+            quickSort(a, 0, middle - 1);
+            quickSort(a, middle + 1, high);
+        }
+        return a;
+    }
+
+    private static int getMiddle(double[] a, int low, int high) {
+        double temp = a[low];
+        while (low < high) {
+            //从右向左找比基准小的元素并交换
+            while(low < high && a[high] >= temp) {
+                high--;
+            }
+            a[low] = a[high];
+            //从左往右找比基准大的元素并交换
+            while (low < high && a[low] <= temp) {
+                low++;
+            }
+            a[high] = a[low];
+        }
+        a[low] = temp;
+        return low;
+    }
+
+    public static void SJF(Job job) {
         System.out.println("<<< 操作后 >>>");
         System.out.println("到达时间:");
         for (int j = 0; j < job.getProcessNumber(); j++) {
@@ -20,6 +48,9 @@ public class FCFS {
         for (int j = 0; j < job.getProcessNumber(); j++) {
             System.out.print(job.serviceTime[j] + "\t");
         }
+
+        //todo
+        quickSort(job.serviceTime, 0, job.serviceTime.length - 1);
 
         //todo
         //第一个作业执行
@@ -41,8 +72,7 @@ public class FCFS {
                     / job.serviceTime[i]; //带权周转时间=周转时间/运行时间
         }
 
-
-        int temp1 = 0, temp2 = 0;
+        double temp1 = 0, temp2 = 0;
         for (int i = 0; i < job.getProcessNumber(); i++) {
             temp1 += job.turnAroundTime[i];
             temp2 += job.turnAroundTimeWithWeight[i];
@@ -54,7 +84,6 @@ public class FCFS {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-
         Job job = new Job();
         System.out.println("<<< 操作前 >>>");
         System.out.println("作业数量:");
@@ -68,7 +97,6 @@ public class FCFS {
         job.turnAroundTime = new double[job.getProcessNumber() + 1];
         job.turnAroundTimeWithWeight = new double[job.getProcessNumber()];
 
-
         System.out.println("到达时间:");
         for (int j = 0; j < job.getProcessNumber(); j++) {
             job.arriveTime[j] = sc.nextInt();
@@ -78,7 +106,7 @@ public class FCFS {
             job.serviceTime[j] = sc.nextInt();
         }
 
-        FCFS(job);
+        SJF(job);
 
         System.out.println("\n开始时间:");
         for (int j = 0; j < job.getProcessNumber(); j++) {
@@ -103,7 +131,7 @@ public class FCFS {
             System.out.print(job.turnAroundTimeWithWeight[j] + "\t");
         }
         System.out.println("\n平均带权周转时间:\n" +
-            job.averageTurnAroundTimeWithWeight);
+                job.averageTurnAroundTimeWithWeight);
     }
-}
 
+}
