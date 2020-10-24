@@ -60,13 +60,13 @@ public class FCFS {
         System.out.println("作业数量:");
         job.setProcessNumber(sc.nextInt());
 
-        job.arriveTime = new int[job.getProcessNumber()];
-        job.serviceTime = new int[job.getProcessNumber()];
-        job.startTime = new int[job.getProcessNumber()];
-        job.waitTime = new int[job.getProcessNumber()];
-        job.completeTime = new int[job.getProcessNumber() + 1];
-        job.turnAroundTime = new int[job.getProcessNumber() + 1];
-        job.turnAroundTimeWithWeight = new int[job.getProcessNumber()];
+        job.arriveTime = new double[job.getProcessNumber()];
+        job.serviceTime = new double[job.getProcessNumber()];
+        job.startTime = new double[job.getProcessNumber()];
+        job.waitTime = new double[job.getProcessNumber()];
+        job.completeTime = new double[job.getProcessNumber() + 1];
+        job.turnAroundTime = new double[job.getProcessNumber() + 1];
+        job.turnAroundTimeWithWeight = new double[job.getProcessNumber()];
 
 
         System.out.println("到达时间:");
